@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAD97994-89D9-472A-B8DC-8CE446B4A439}</ProjectGuid>
+    <ProjectGuid>{5E58AA8B-0A24-43A5-AF1F-F986DA82B719}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task_3</RootNamespace>
-    <AssemblyName>Task_3</AssemblyName>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agreement.cs" />
-    <Compile Include="Call.cs" />
-    <Compile Include="IElementName.cs" />
-    <Compile Include="IElementId.cs" />
-    <Compile Include="Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
