@@ -29,24 +29,24 @@ namespace AutomaticStation
 
         #region metods
 
-        public void OnCallRequested(CallEventArgs e) => CallRequested(this, e);
+        public EventHandler<CallEventArgs> OnCallRequested(CallEventArgs e) => CallRequested(this, e);
 
         //подключение к терминалу
-        public void ConnectToTerminal(Terminal terminal)
+        public void ConnectToTerminal(Terminal terminal, CallEventArgs e)
         {
             terminal.SubscribeToPort(this.Id);
 
             //подписка на события порта
-            CallRequested += OnCallRequested;
+            CallRequested += OnCallRequested(e);
         }
 
         //отключение от терминала
-        public void DisconnectFromTerminal(Terminal terminal)
+        public void DisconnectFromTerminal(Terminal terminal, CallEventArgs e)
         {
             terminal.UnsubscribeFromPort(this.Id);
 
             //отписка от событий порта
-            CallRequested -= OnCallRequested;
+            CallRequested -= OnCallRequested(e);
         }
 
         #endregion
