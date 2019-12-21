@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Call.cs" />
     <Compile Include="CallController.cs" />
+    <Compile Include="PortStatus.cs" />
     <Compile Include="UnityCollections.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Port.cs" />

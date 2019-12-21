@@ -8,16 +8,35 @@ namespace AutomaticStation
 {
     public class Port
     {
+
+        private int Id;
+
+        private Terminal activeTerminal;
+
         #region properties
 
-        //свободен/занят
-        private bool busy { get; set; }
+        private PortStatus portStatus { get; set; }
 
-        //включен/выключен
-        private bool turnOn { get; set; }
+        #endregion
 
-        //звонок
-        private bool call { get; set; }
+
+        #region metods
+
+        //подключение к терминалу
+        public void ConnectToTerminal(Terminal terminal)
+        {
+            terminal.SubscribeToPort(this);
+
+            //подписка на события порта
+        }
+
+        //отключение от терминала
+        public void DisconnectFromTerminal(Terminal terminal)
+        {
+            terminal.UnsubscribeFromPort(this);
+
+            //отписка от событий порта
+        }
 
         #endregion
     }

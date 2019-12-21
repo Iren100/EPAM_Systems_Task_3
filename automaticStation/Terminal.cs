@@ -7,15 +7,49 @@ using UnitOfWorkClass.Link;
 
 namespace AutomaticStation
 {
-    class Terminal: ILinkTarget
+    public class Terminal//: ILinkTarget
     {
+        private int Id;
 
-        delegate void call(); //метод
-        event call Notify; // событие   
+        private Port activePort;
 
-        public void Update(int commandId, Dictionary<string, object> parameters)
+
+        //объявление событий Event Hundler
+
+
+
+
+        //delegate void call(); //метод
+        //event call Notify; // событие   
+
+        //public void Update(int commandId, Dictionary<string, object> parameters)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+        //подписка
+        public void SubscribeToPort(int portId)
         {
-            throw new NotImplementedException();
+
+        }
+
+        //отписка
+        public void UnsubscribeFromPort(int portId)
+        {
+
+        }
+
+        //подключение к порту
+        public void ConnectTjPort(Terminal terminal)
+        {
+            SubscribeToPort(this.Id);
+        }
+
+        //отключение от порта
+        public void DisconnectFromPort(Terminal terminal)
+        {
+            UnsubscribeFromPort(this.Id);
         }
     }
 }
