@@ -25,7 +25,7 @@ namespace AutomaticStation
         #endregion
 
 
-        
+        #region metods
 
         public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this,e);
 

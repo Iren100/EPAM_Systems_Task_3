@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomaticStation", "automaticStation\AutomaticStation.csproj", "{BB6CAE61-AB88-45BC-8A65-E57DCD2C89C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomaticStation", "AutomaticStation\AutomaticStation.csproj", "{BB6CAE61-AB88-45BC-8A65-E57DCD2C89C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingSystem", "BillingSystem\BillingSystem.csproj", "{D6E1705E-396A-44CA-86EB-B6BD9FEACF01}"
 EndProject
