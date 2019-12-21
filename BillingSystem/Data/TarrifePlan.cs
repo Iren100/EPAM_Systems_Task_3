@@ -7,7 +7,6 @@ namespace BillingSystem.Data
         public Guid Id { get; set; }
 
         public string Name { get; set; }
-
       
         //Для всех абонентов применяется один тарифный план.
         #region Singleton

@@ -20,7 +20,7 @@ namespace AutomaticStation
 
         #region properties
 
-        private PortStatus portStatus { get; set; }
+        private PortStatusEnum portStatus { get; set; }
 
         #endregion
 

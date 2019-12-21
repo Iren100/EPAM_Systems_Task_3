@@ -29,6 +29,5 @@ namespace BillingSystem.Data
         public string Note { get; set; }
 
         #endregion
-
     }
 }
