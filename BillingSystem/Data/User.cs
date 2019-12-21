@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BillingSystem.Data
 {
-    public class User: IElementId, IElementName
+    public class User
     {
         public Guid Id { get; set; }
 
@@ -26,20 +22,8 @@ namespace BillingSystem.Data
         
         public string Adress { get; set; }
 
-        //физ./юр. лицо
-        //public string 
-
-        //mail
         public string mail { get; set; }
 
-        // пароль
-        public string password { get; set; }
-
-        // ИНН
-
-        //
-
         #endregion
-
     }
 }

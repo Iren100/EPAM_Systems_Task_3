@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BillingSystem.Data
 {
-    public class Phone : IElementId
+    public class Phone
     {
         public Guid Id { get; set; }
 

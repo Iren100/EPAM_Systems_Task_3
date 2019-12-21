@@ -2,9 +2,8 @@
 
 namespace BillingSystem.Data
 {
-    public class Agreement: IElementId, IElementName
+    public class Agreement
     {
-
         public Guid Id { get; set; }
 
         public string Name { get; set; }

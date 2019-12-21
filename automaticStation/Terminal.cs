@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnitOfWorkClass.Link;
 
 namespace AutomaticStation
 {
     public class Terminal//: ILinkTarget
     {
-        private int Id;
+        private int id;
 
-        private Port activePort;
-
-
-        //объявление событий Event Hundler
-
-
+        private int activePort;
 
 
         //delegate void call(); //метод
@@ -28,28 +18,54 @@ namespace AutomaticStation
         //}
 
 
-        //подписка
-        public void SubscribeToPort(int portId)
-        {
+        //объявление событий Event Hundler
+        #region EventHundler
 
-        }
+        public event EventHandler<CallEventArgs> CallRequested;
 
-        //отписка
-        public void UnsubscribeFromPort(int portId)
-        {
+        #endregion
 
-        }
+
+        ////подписка
+        //public void SubscribeToPort(int portId)
+        //{
+
+        //}
+
+        ////отписка
+        //public void UnsubscribeFromPort()
+        //{
+
+        //}
+
+        #region metods
+
+        public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this, e);
 
         //подключение к порту
-        public void ConnectTjPort(Terminal terminal)
+        public void ConnectToPort(int portId)
         {
-            SubscribeToPort(this.Id);
+            //SubscribeToPort(portId);
+
+            //подписка на события порта
+            CallRequested += OnCallRequested;
+
+
+            //сохраняем порт у себя
+            activePort = portId;
         }
 
         //отключение от порта
-        public void DisconnectFromPort(Terminal terminal)
+        public void DisconnectFromPort()
         {
-            UnsubscribeFromPort(this.Id);
+            //UnsubscribeFromPort();
+
+            //отписка от событий порта
+            CallRequested -= OnCallRequested;
+
+            activePort = 0;
         }
+
+        #endregion
     }
 }

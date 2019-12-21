@@ -5,7 +5,7 @@ namespace AutomaticStation
     public class Port
     {
 
-        private int Id;
+        private int id;
 
         private Terminal activeTerminal;
 
@@ -13,9 +13,7 @@ namespace AutomaticStation
         //объявление событий Event Hundler
         #region EventHundler
 
-
         public event EventHandler<CallEventArgs> CallRequested;
-
 
         #endregion
 
@@ -27,26 +25,31 @@ namespace AutomaticStation
         #endregion
 
 
-        #region metods
+        
 
-        public void Port_CallRequested(Object sender, CallEventArgs e) => CallRequested(this,e);
+        public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this,e);
 
         //подключение к терминалу
-        public void Port_CallRequested(Terminal terminal, CallEventArgs e)
+        public void Port_CallRequested(Terminal terminal)
         {
-            terminal.SubscribeToPort(this.Id);
+            //terminal.SubscribeToPort(this.Id);
 
             //подписка на события порта
-            CallRequested += Port_CallRequested;
+            CallRequested += OnCallRequested;
+
+            //сохраняем порт у себя
+            activeTerminal = terminal;
         }
 
         //отключение от терминала
-        public void DisconnectFromTerminal(Terminal terminal, CallEventArgs e)
+        public void Port_Disconnect(Terminal terminal)
         {
-            terminal.UnsubscribeFromPort(this.Id);
+            //terminal.UnsubscribeFromPort();
 
             //отписка от событий порта
-            CallRequested -= Port_CallRequested;
+            CallRequested -= OnCallRequested;
+
+            activeTerminal = null;
         }
 
         #endregion
