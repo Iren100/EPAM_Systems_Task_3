@@ -29,7 +29,7 @@ namespace AutomaticStation
 
         #region metods
 
-        public EventHandler<CallEventArgs> OnCallRequested(CallEventArgs e) => CallRequested(this, e);
+        public void OnCallRequested(CallEventArgs e) => CallRequested(this,e);
 
         //подключение к терминалу
         public void ConnectToTerminal(Terminal terminal, CallEventArgs e)
