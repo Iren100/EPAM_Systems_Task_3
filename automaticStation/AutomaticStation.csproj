@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Call.cs" />
-    <Compile Include="CallController.cs" />
+    <Compile Include="CallEventArgs.cs" />
     <Compile Include="PortStatus.cs" />
     <Compile Include="UnityCollections.cs" />
     <Compile Include="Event.cs" />
