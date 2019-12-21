@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Agreement.cs" />
-    <Compile Include="Data\Call.cs" />
+    <Compile Include="Data\CallsHistory.cs" />
     <Compile Include="Data\Phone.cs" />
     <Compile Include="Data\Station.cs" />
     <Compile Include="Data\TarrifePlan.cs" />

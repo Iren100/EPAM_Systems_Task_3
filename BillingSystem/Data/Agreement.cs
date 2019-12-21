@@ -6,14 +6,16 @@ namespace BillingSystem.Data
     {
         public Guid Id { get; set; }
 
-        public string Name { get; set; }
-
 
         #region Phone number
 
-        public Guid StationId { get; set; } // ссылка на АТС
+        //мы не знаем ничего о порте и терминале, просто набираем номер
 
-        public Guid PortId { get; set; } // ссылка на порт
+        public String phoneNumber { get; set; }
+
+        //public Guid StationId { get; set; } // ссылка на АТС
+
+        //public Guid PortId { get; set; } // ссылка на порт
 
         #endregion
 

@@ -2,7 +2,7 @@
 
 namespace BillingSystem.Data
 {
-    public class Call
+    public class CallsHistory
     {
         public Guid Id { get; set; }
 
