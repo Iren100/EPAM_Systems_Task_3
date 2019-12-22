@@ -4,9 +4,9 @@ namespace AutomaticStation
 {
     public class Terminal//: ILinkTarget
     {
-        private int id;
+        private Guid _id = new Guid();
 
-        private int activePort;
+        private Guid _activePort;
 
 
         //delegate void call(); //метод
@@ -43,7 +43,7 @@ namespace AutomaticStation
         public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this, e);
 
         //подключение к порту
-        public void ConnectToPort(int portId)
+        public void ConnectToPort(Guid portId)
         {
             //SubscribeToPort(portId);
 
@@ -52,7 +52,7 @@ namespace AutomaticStation
 
 
             //сохраняем порт у себя
-            activePort = portId;
+            _activePort = portId;
         }
 
         //отключение от порта
@@ -63,7 +63,7 @@ namespace AutomaticStation
             //отписка от событий порта
             CallRequested -= OnCallRequested;
 
-            activePort = 0;
+            _activePort = Guid.Empty;
         }
 
         #endregion

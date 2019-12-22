@@ -4,21 +4,21 @@ namespace AutomaticStation
 {
     public class Port
     {
-        private Guid _id = new Guid();
+        public Guid Id = new Guid();
 
-        private Terminal activeTerminal;
+        private Terminal _activeTerminal;
 
 
         #region properties
 
-        private PortStatus portStatus { get; set; }
+        public PortStatus Status { get; set; }
 
         #endregion
 
 
         public Port()
         {
-            this.portStatus = PortStatus.IsFree;
+            this.Status = PortStatus.IsFree;
         }
 
 
@@ -35,26 +35,35 @@ namespace AutomaticStation
         public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this,e);
 
         //подключение к терминалу
-        public void Port_CallRequested(Terminal terminal)
+        public void Connect(Terminal terminal)
         {
             //terminal.SubscribeToPort(this.Id);
 
-            //подписка на события порта
-            CallRequested += OnCallRequested;
-
-            //сохраняем порт у себя
-            activeTerminal = terminal;
+            if (Status == PortStatus.TurnOn || Status == PortStatus.IsFree)
+            {
+                //подписка на события порта
+                CallRequested += OnCallRequested;
+                //сохраняем порт у себя
+                _activeTerminal = terminal;
+                //меняем статус
+                Status = PortStatus.Connect;
+            }
         }
 
         //отключение от терминала
-        public void Port_Disconnect()
+        public void Disconnect()
         {
             //terminal.UnsubscribeFromPort();
 
-            //отписка от событий порта
-            CallRequested -= OnCallRequested;
-
-            activeTerminal = null;
+            if (Status == PortStatus.Busy || Status == PortStatus.Connect)
+            {
+                //отписка от событий порта
+                CallRequested -= OnCallRequested;
+                //обнуляем порт
+                _activeTerminal = null;
+                //меняем статус
+                Status = PortStatus.Disconnect;
+            }
         }
 
         #endregion

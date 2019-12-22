@@ -43,13 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Agreement.cs" />
-    <Compile Include="Data\CallsHistory.cs" />
-    <Compile Include="Data\AgreementStatusEnum.cs" />
-    <Compile Include="Data\Phone.cs" />
-    <Compile Include="Data\Station.cs" />
-    <Compile Include="Data\TarrifePlan.cs" />
-    <Compile Include="Data\User.cs" />
+    <Compile Include="Agreement.cs" />
+    <Compile Include="CallsHistory.cs" />
+    <Compile Include="AgreementStatusEnum.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="Station.cs" />
+    <Compile Include="TarrifePlan.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="UnityCollections.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
