@@ -26,21 +26,7 @@ namespace AutomaticStation
         #endregion
 
 
-        ////подписка
-        //public void SubscribeToPort(int portId)
-        //{
-
-        //}
-
-        ////отписка
-        //public void UnsubscribeFromPort()
-        //{
-
-        //}
-
         #region metods
-
-        //public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this, e);
 
         //подключение к порту
         public void ConnectToPort(Port port)//(Guid portId)
@@ -48,7 +34,7 @@ namespace AutomaticStation
             //SubscribeToPort(portId);
 
             //подписка на события порта
-            CallRequested += port.OnCallRequested;
+            port.CallRequested += CallRequested;
 
             //сохраняем порт у себя
             _activePort = port;//portId;
@@ -63,7 +49,7 @@ namespace AutomaticStation
             //UnsubscribeFromPort();
 
             //отписка от событий порта
-            CallRequested -= _activePort.OnCallRequested;
+            _activePort.CallRequested -= CallRequested;
 
             //меняем статус
             _activePort.Status = PortStatus.Free;
