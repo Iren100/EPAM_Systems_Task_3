@@ -10,7 +10,7 @@ namespace BillingSystem.Data
         #region Phone number
 
         //мы не знаем ничего о порте и терминале, просто набираем номер
-        public String phoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         //public Guid StationId { get; set; } // ссылка на АТС
 
@@ -28,13 +28,26 @@ namespace BillingSystem.Data
         private Station _station { get; set; }
 
 
-        private string DocNumber { get; set; }
+        private string _docNumber { get; set; }
 
-        private DateTime DocDate { get; set; }
+        private DateTime _docDate { get; set; }
 
-        private string Note { get; set; }
+        private string _note { get; set; }
 
         #endregion
+
+
+        public Agreement(string phoneNumber, User user, TarrifePlan tarrifePlan, Station station, 
+                           string dogNumder, DateTime docDate, string note)
+        {
+            PhoneNumber = phoneNumber;
+            _user = user;
+            _tarrifePlan = tarrifePlan;
+            _station = station;
+            _docNumber = _docNumber;
+            _docDate = docDate;
+            _note = note;
+        }
 
 
         #region metods

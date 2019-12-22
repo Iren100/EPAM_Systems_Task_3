@@ -8,8 +8,8 @@ namespace BillingSystem.Data
         public Guid Id { get; set; }
 
         public string Name {
-                             get { return  firstName + " " + lastName + " " + patronymicName; }
-                             set { value = firstName + " " + lastName + " " + patronymicName; }
+                             get { return  FirstName + " " + LastName + " " + PatronymicName; }
+                             private set { value = FirstName + " " + LastName + " " + PatronymicName; }
                            }
 
         private Port _port { get; set; }
@@ -17,17 +17,27 @@ namespace BillingSystem.Data
 
         #region Other fields
 
-        public string firstName { get; set; }
+        private string FirstName { get; set; }
 
-        public string lastName { get; set; }
+        private string LastName { get; set; }
 
-        public string patronymicName { get; set; }
+        private string PatronymicName { get; set; }
         
-        public string Adress { get; set; }
+        private string Adress { get; set; }
 
-        public string mail { get; set; }
+        private string Mail { get; set; }
 
         #endregion
+
+
+        public User(Port port, string firstName, string lastName, string patronymicName, string adress, string mail)
+        {
+            _port = port;
+            LastName = lastName;
+            PatronymicName = patronymicName;
+            Adress = adress;
+            Mail = mail;
+        }
 
 
         #region metods

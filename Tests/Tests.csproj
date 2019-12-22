@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BillingSystem\BillingSystem.csproj">
+      <Project>{d6e1705e-396a-44ca-86eb-b6bd9feacf01}</Project>
+      <Name>BillingSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
