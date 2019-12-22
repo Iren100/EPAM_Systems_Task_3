@@ -2,7 +2,7 @@
 
 namespace BillingSystem.Data
 {
-    class TarrifePlan
+    public class TarrifePlan
     {
         //public Guid Id { get; set; }  // т.к. тарифный план только один! поэтому коммент.
 

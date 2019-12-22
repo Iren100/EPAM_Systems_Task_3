@@ -13,14 +13,14 @@ namespace AutomaticStation
         //объявление событий Event Hundler
         #region EventHundler
 
-        public event EventHandler<CallEventArgs> CallRequested;
+        public event EventHandler<CallEventArgs> CallRequested; //запрос на соединение к порту
 
         #endregion
 
 
         #region properties
 
-        private PortStatusEnum portStatus { get; set; }
+        private PortStatus portStatus { get; set; }
 
         #endregion
 
@@ -42,7 +42,7 @@ namespace AutomaticStation
         }
 
         //отключение от терминала
-        public void Port_Disconnect(Terminal terminal)
+        public void Port_Disconnect()
         {
             //terminal.UnsubscribeFromPort();
 

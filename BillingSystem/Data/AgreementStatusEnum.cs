@@ -2,7 +2,7 @@
 namespace BillingSystem
 {
     // Connect Status
-    public enum ConnectStatus
+    public enum AgreementStatus
     {
         /// <summary>
         /// very good

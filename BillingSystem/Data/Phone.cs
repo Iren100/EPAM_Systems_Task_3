@@ -7,5 +7,7 @@ namespace BillingSystem.Data
         public Guid Id { get; set; }
 
         public string Number { get; set; }
+
+        //public Station station { get; set; } // не уверена, что нужно
     }
 }
