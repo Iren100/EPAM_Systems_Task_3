@@ -19,14 +19,6 @@ namespace AutomaticStation
         /// <summary>
         /// turn off
         /// </summary>
-        TurnOff,
-        /// <summary>
-        /// connect
-        /// </summary>
-        Connect,
-        /// <summary>
-        /// disconnect
-        /// </summary>
-        Disconnect
+        TurnOff
     }
 }

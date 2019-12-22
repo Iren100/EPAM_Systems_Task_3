@@ -35,26 +35,26 @@ namespace Tests
             //соединение абонента
             port.Connect(terminal);
             Console.WriteLine("Успешное подключение к порту!");
-            if (port.Status != PortStatus.Connect)
+            if (port.Status != PortStatus.Busy)
                 Console.WriteLine("Порт выключен либо занят!");
 
             //отсоединение абонента        
             port.Disconnect();
             Console.WriteLine("Успешное отключение от порта!");
-            if (port.Status != PortStatus.Disconnect)
+            if (port.Status != PortStatus.IsFree)
                 Console.WriteLine("Порт не занят или не подключен!");
 
 
             //подключение терминала
             terminal.ConnectToPort(port.Id);
             Console.WriteLine("Успешное подключение терминала!");
-            if (port.Status != PortStatus.Connect)
+            if (port.Status != PortStatus.Busy)
                 Console.WriteLine("Порт выключен либо занят!");
             
             //отключение терминала
             terminal.DisconnectFromPort();
-            Console.WriteLine("Успешное отключение от порта!");
-            if (port.Status != PortStatus.Disconnect)
+            Console.WriteLine("Успешное отключение терминала!");
+            if (port.Status != PortStatus.IsFree)
                 Console.WriteLine("Порт не занят или не подключен!");
 
             #endregion

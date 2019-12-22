@@ -46,7 +46,7 @@ namespace AutomaticStation
                 //сохраняем порт у себя
                 _activeTerminal = terminal;
                 //меняем статус
-                Status = PortStatus.Connect;
+                Status = PortStatus.Busy;
             }
         }
 
@@ -55,14 +55,14 @@ namespace AutomaticStation
         {
             //terminal.UnsubscribeFromPort();
 
-            if (Status == PortStatus.Busy || Status == PortStatus.Connect)
+            if (Status == PortStatus.TurnOff || Status == PortStatus.Busy )
             {
                 //отписка от событий порта
                 CallRequested -= OnCallRequested;
                 //обнуляем порт
                 _activeTerminal = null;
                 //меняем статус
-                Status = PortStatus.Disconnect;
+                Status = PortStatus.IsFree;
             }
         }
 
