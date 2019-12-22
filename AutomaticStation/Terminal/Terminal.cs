@@ -6,7 +6,7 @@ namespace AutomaticStation
     {
         private Guid _id = new Guid();
 
-        private Guid _activePort;
+        private Port _activePort;
 
 
         //delegate void call(); //метод
@@ -40,19 +40,21 @@ namespace AutomaticStation
 
         #region metods
 
-        public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this, e);
+        //public void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this, e);
 
         //подключение к порту
-        public void ConnectToPort(Guid portId)
+        public void ConnectToPort(Port port)//(Guid portId)
         {
             //SubscribeToPort(portId);
 
             //подписка на события порта
-            CallRequested += OnCallRequested;
-
+            CallRequested += port.OnCallRequested;
 
             //сохраняем порт у себя
-            _activePort = portId;
+            _activePort = port;//portId;
+
+            //меняем статус
+            port.Status = PortStatus.Busy;
         }
 
         //отключение от порта
@@ -61,9 +63,12 @@ namespace AutomaticStation
             //UnsubscribeFromPort();
 
             //отписка от событий порта
-            CallRequested -= OnCallRequested;
+            CallRequested -= _activePort.OnCallRequested;
 
-            _activePort = Guid.Empty;
+            //меняем статус
+            _activePort.Status = PortStatus.Free;
+
+            _activePort = null;//Guid.Empty;
         }
 
         #endregion

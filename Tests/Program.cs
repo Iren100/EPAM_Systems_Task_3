@@ -48,7 +48,7 @@ namespace Tests
 
 
             //подключение терминала
-            terminal.ConnectToPort(port.Id);
+            terminal.ConnectToPort(port);
             if (port.Status == PortStatus.Busy)
                 Console.WriteLine("Успешное подключение терминала!");
             else
