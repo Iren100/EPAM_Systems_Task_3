@@ -32,19 +32,19 @@ namespace Tests
 
             Terminal terminal = new Terminal();
 
-            //соединение абонента
-            port.Connect(terminal);
-            if (port.Status == PortStatus.Busy)
-                Console.WriteLine("Успешное подключение к порту!");
-            else
-                Console.WriteLine("Порт выключен либо занят!");
+            ////соединение абонента
+            //port.Connect(terminal);
+            //if (port.Status == PortStatus.Busy)
+            //    Console.WriteLine("Успешное подключение к порту!");
+            //else
+            //    Console.WriteLine("Порт выключен либо занят!");
 
-            //отсоединение абонента        
-            port.Disconnect();
-            if (port.Status == PortStatus.IsFree)
-                Console.WriteLine("Успешное отключение от порта!");
-            else
-                Console.WriteLine("Порт не занят или не подключен!");
+            ////отсоединение абонента        
+            //port.Disconnect();
+            //if (port.Status == PortStatus.IsFree)
+            //    Console.WriteLine("Успешное отключение от порта!");
+            //else
+            //    Console.WriteLine("Порт не занят или не подключен!");
 
 
             //подключение терминала
@@ -56,7 +56,7 @@ namespace Tests
             
             //отключение терминала
             terminal.DisconnectFromPort();
-            if (port.Status == PortStatus.IsFree)
+            if (port.Status == PortStatus.Free)
                 Console.WriteLine("Успешное отключение терминала!");
             else
                 Console.WriteLine("Порт не занят или не подключен!");

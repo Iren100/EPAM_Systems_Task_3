@@ -55,7 +55,7 @@ namespace BillingSystem.Data
         //абоненст может самостоятельно отключать телефон от порта станции
         public void disconnectFromPort()
         {
-            _port.Disconnect();
+           // _port.Disconnect();
         }
 
         #endregion

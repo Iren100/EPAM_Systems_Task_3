@@ -9,9 +9,9 @@ namespace AutomaticStation
         /// </summary>
         Busy,
         /// <summary>
-        /// is free
+        /// free
         /// </summary>
-        IsFree,
+        Free,
         /// <summary>
         /// turn on
         /// </summary>
