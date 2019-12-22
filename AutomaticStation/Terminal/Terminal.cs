@@ -8,6 +8,11 @@ namespace AutomaticStation
 
         private Port _activePort;
 
+        public Terminal()
+        {
+            CallAnswered = OnCallAnswered;
+        }
+
 
         //delegate void call(); //метод
         //event call Notify; // событие   
@@ -23,6 +28,9 @@ namespace AutomaticStation
 
         public event EventHandler<CallEventArgs> CallRequested;
 
+        //сообщает порту, что к нему подключились
+        public event EventHandler<CallEventArgs> CallAnswered;
+
         #endregion
 
 
@@ -31,9 +39,7 @@ namespace AutomaticStation
         //подключение к порту
         public void ConnectToPort(Port port)//(Guid portId)
         {
-            //SubscribeToPort(portId);
-
-            //подписка на события порта
+            //подписка на события терминала
             port.CallRequested += CallRequested;
 
             //сохраняем порт у себя
@@ -41,13 +47,14 @@ namespace AutomaticStation
 
             //меняем статус
             port.Status = PortStatus.Busy;
+
+            //оповестить порт
+            port.CallAnswered += CallAnswered;
         }
 
         //отключение от порта
         public void DisconnectFromPort()
         {
-            //UnsubscribeFromPort();
-
             //отписка от событий порта
             _activePort.CallRequested -= CallRequested;
 
@@ -55,6 +62,11 @@ namespace AutomaticStation
             _activePort.Status = PortStatus.Free;
 
             _activePort = null;//Guid.Empty;
+        }
+
+        private void OnCallAnswered(Object sender, CallEventArgs e)
+        {
+            //code
         }
 
         #endregion

@@ -46,8 +46,8 @@ namespace BillingSystem.Data
         public void connectToPort()
         {
             Port port = new Port();
-            CallEventArgs e = new CallEventArgs();
-            port.OnCallRequested(this, e);
+            //CallEventArgs e = new CallEventArgs();
+            //port.CallRequested(this, e);
 
             _port = port;
         }        

@@ -6,7 +6,7 @@ namespace AutomaticStation
     {
         public Guid Id = new Guid();
 
-        private Terminal _activeTerminal;
+        //private Terminal _activeTerminal;
 
 
         #region properties
@@ -19,25 +19,28 @@ namespace AutomaticStation
         public Port()
         {
             this.Status = PortStatus.Free;
+            CallRequested = OnCallRequested;
         }
 
 
         //объявление событий Event Hundler
         #region EventHundler
 
-        public event EventHandler<CallEventArgs> CallRequested; //говорит терминалу, что на него звонят
+        //говорит терминалу, что на него звонят
+        public event EventHandler<CallEventArgs> CallRequested;
+
+        //получает ответ от терминала
+        public event EventHandler<CallEventArgs> CallAnswered;
 
         #endregion
 
 
         #region metods
 
-        private void OnCallRequested(Object sender, CallEventArgs e) => CallRequested(this,e);
-
-        //private CallRequested call()
-        //{
-
-        //}
+        private void OnCallRequested(Object sender, CallEventArgs e)
+        {
+            //code
+        }
 
         #endregion
     }
