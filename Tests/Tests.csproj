@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutomaticStation\AutomaticStation.csproj">
+      <Project>{bb6cae61-ab88-45bc-8a65-e57dcd2c89c4}</Project>
+      <Name>AutomaticStation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BillingSystem\BillingSystem.csproj">
       <Project>{d6e1705e-396a-44ca-86eb-b6bd9feacf01}</Project>
       <Name>BillingSystem</Name>

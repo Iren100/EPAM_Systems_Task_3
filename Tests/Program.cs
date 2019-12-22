@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AutomaticStation;
 using BillingSystem.Data;
 
 namespace Tests
@@ -11,10 +9,15 @@ namespace Tests
     {
         static void Main(string[] args)
         {
-            User user = new User();
+            Port port = new Port();
 
-            Agreement agreement = new Agreement();
+            User user = new User(port, "Haidzel", "Iryna", "Ivanovna", "Grodno, st. Belye Rosy", "scorpion_nova@tut.by");
 
+            TarrifePlan tarrifePlan = TarrifePlan.getInstance("budgetary");
+
+            Station station = new Station("Station1", new List<Port>() { port } );
+
+            Agreement agreement = new Agreement("80295861456", user, tarrifePlan, station, "01", "22.12.2019", "First agreement!");
 
         }
     }

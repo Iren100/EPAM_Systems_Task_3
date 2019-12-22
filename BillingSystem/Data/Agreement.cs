@@ -4,7 +4,7 @@ namespace BillingSystem.Data
 {
     public class Agreement
     {
-        public Guid Id { get; set; }
+        private Guid _d = new Guid();
 
 
         #region Phone number

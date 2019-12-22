@@ -4,23 +4,28 @@ namespace AutomaticStation
 {
     public class Port
     {
-
-        private int id;
+        private Guid _id = new Guid();
 
         private Terminal activeTerminal;
+
+
+        #region properties
+
+        private PortStatus portStatus { get; set; }
+
+        #endregion
+
+
+        public Port()
+        {
+            this.portStatus = PortStatus.IsFree;
+        }
 
 
         //объявление событий Event Hundler
         #region EventHundler
 
         public event EventHandler<CallEventArgs> CallRequested; //запрос на соединение к порту
-
-        #endregion
-
-
-        #region properties
-
-        private PortStatus portStatus { get; set; }
 
         #endregion
 

@@ -5,7 +5,7 @@ namespace BillingSystem.Data
 {
     public class User
     {
-        public Guid Id { get; set; }
+        private Guid _id = new Guid();
 
         public string Name {
                              get { return  FirstName + " " + LastName + " " + PatronymicName; }

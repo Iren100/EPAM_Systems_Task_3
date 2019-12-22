@@ -6,20 +6,27 @@ namespace BillingSystem.Data
 {
     public class Station
     {
-        public Guid Id { get; set; }
+        private Guid _id = new Guid();
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        private ICollection<Port> PortItems { get; set; }
+        private ICollection<Port> _portItems { get; set; }
 
-        private int _activePort { get; set; }
+        private int _port { get; set; }
 
-        //методы
+
+        public Station(string name, ICollection<Port> portItems)
+        {
+            Name = name;
+            _portItems = portItems;
+        }
+
+
         #region metods
 
         public int? GetPort(int id)
         {
-            return _activePort;
+            return _port;
             //return null;
         }
 
