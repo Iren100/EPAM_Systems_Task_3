@@ -19,7 +19,7 @@ namespace Tests
 
             Station station = new Station("Station1", new List<Port>() { port } );
 
-            Agreement agreement = new Agreement("80295861456", user, tarrifePlan, station, "01", Convert.ToDateTime("22.12.2019"), "First agreement!");
+            Agreement agreement = new Agreement("80295861456", user, tarrifePlan, station, "01", DateTime.Now, "First agreement!");
 
             #endregion
 
