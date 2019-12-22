@@ -29,5 +29,11 @@ namespace BillingSystem.Data
         public string Note { get; set; }
 
         #endregion
+
+        //методы
+        public ConnectStatus SignAgreement()
+        {
+            return ConnectStatus.Ok;
+        }
     }
 }
