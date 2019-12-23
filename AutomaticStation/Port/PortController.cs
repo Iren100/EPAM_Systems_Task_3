@@ -4,11 +4,40 @@ using UnitOfWorkClass.Link;
 namespace AutomaticStation
 {
     //класс для отслеживания измения состояния порта
-    class PortController : ILinkSource
+    class PortController// : ILinkSource
     {
-        public object GetState()
+        public PortController(Port port)
         {
-            throw new NotImplementedException();
+            //this.port = port;
+            CallRequested = OnCallRequested;
         }
+
+        //public object GetState()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public Port port { get; private set; }
+
+        //объявление событий Event Hundler
+        #region EventHundler
+
+        //говорит терминалу, что на него звонят
+        public event EventHandler<CallEventArgs> CallRequested;
+
+        //получает ответ от терминала
+        public event EventHandler<CallEventArgs> CallAnswered;
+
+        #endregion
+
+
+        #region metods
+
+        private void OnCallRequested(Object sender, CallEventArgs e)
+        {
+            //code
+        }
+
+        #endregion
     }
 }

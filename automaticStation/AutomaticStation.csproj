@@ -54,6 +54,7 @@
     <Compile Include="Port\PortController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Terminal\Terminal.cs" />
+    <Compile Include="Terminal\TerminalController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnitOfWorkClass\UnitOfWorkClass.csproj">
