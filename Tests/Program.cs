@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AutomaticStation;
 using BillingSystem.Data;
 using BillingSystem.Collections;
+using Reports;
 
 namespace Tests
 {
@@ -192,6 +193,15 @@ namespace Tests
                 Console.WriteLine("Порт не занят или не подключен!");
 
             #endregion
+
+
+            #region report
+
+            Reports.Report_Excel.ReportForExcel(UnityCollections.callHistorytItems);
+
+            #endregion
+
+            //
 
             Console.ReadLine();
         }

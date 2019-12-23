@@ -58,6 +58,10 @@
       <Project>{d6e1705e-396a-44ca-86eb-b6bd9feacf01}</Project>
       <Name>BillingSystem</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reports\Reports.csproj">
+      <Project>{e19cb3f5-8532-4ec8-bfae-c598b4fd76d5}</Project>
+      <Name>Reports</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
