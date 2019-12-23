@@ -62,7 +62,7 @@ namespace Tests
                 Console.WriteLine("Порт выключен либо занят!");
 
             //запись в коллекцию callHistorytItems инфы о звонке
-            CallHistory callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(), 5,user);
+            CallHistory callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0,1,10), 5,user);
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
@@ -121,7 +121,7 @@ namespace Tests
                 Console.WriteLine("Порт выключен либо занят!");
 
             //запись в коллекцию callHistorytItems инфы о звонке
-            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(), 10, user);
+            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 2, 20), 10, user);
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
@@ -182,7 +182,7 @@ namespace Tests
                 Console.WriteLine("Порт выключен либо занят!");
 
             //запись в коллекцию callHistorytItems инфы о звонке
-            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(), 15, user);
+            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 3, 30), 15, user);
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала

@@ -18,6 +18,9 @@ namespace BillingSystem.Data
 
         public User User { get; set; }
 
+        //для упрощения вывода в отчет
+        public string UserName { get; set; }
+
 
         public CallHistory(DateTime date, Phone incomingCallNumber, Phone outgoingCallNumber, 
                             TimeSpan duration, int sum, User user)
@@ -28,6 +31,7 @@ namespace BillingSystem.Data
             Duration = duration;
             Sum = sum;
             User = user;
+            UserName = User.Name;
         }
     }
 }

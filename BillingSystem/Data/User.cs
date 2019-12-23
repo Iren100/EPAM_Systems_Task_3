@@ -33,6 +33,7 @@ namespace BillingSystem.Data
         public User(Port port, string firstName, string lastName, string patronymicName, string adress, string mail)
         {
             _port = port;
+            FirstName = firstName;
             LastName = lastName;
             PatronymicName = patronymicName;
             Adress = adress;
