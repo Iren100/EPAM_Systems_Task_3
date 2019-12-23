@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E58AA8B-0A24-43A5-AF1F-F986DA82B719}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <ProjectGuid>{E5706F51-5BEC-4892-89D2-35F67AD3AC49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>ClassLibrary1</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BillingSystem">
+      <HintPath>..\BillingSystem\bin\Debug\BillingSystem.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,25 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Call\CallEventArgs.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Collections\UnityCollections.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Port\Port.cs" />
+    <Compile Include="Port\PortController.cs" />
+    <Compile Include="Port\PortStatusEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BillingSystem\BillingSystem.csproj">
-      <Project>{d6e1705e-396a-44ca-86eb-b6bd9feacf01}</Project>
-      <Name>BillingSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ClassLibrary1\AutomaticStation.csproj">
-      <Project>{e5706f51-5bec-4892-89d2-35f67ad3ac49}</Project>
-      <Name>AutomaticStation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Reports\Reports.csproj">
-      <Project>{e19cb3f5-8532-4ec8-bfae-c598b4fd76d5}</Project>
-      <Name>Reports</Name>
-    </ProjectReference>
+    <Compile Include="Terminal\Terminal.cs" />
+    <Compile Include="Terminal\TerminalController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

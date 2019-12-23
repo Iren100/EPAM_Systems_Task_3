@@ -1,8 +1,8 @@
 ﻿using System;
+using BillingSystem.Data;
 
 namespace AutomaticStation
 {
-    [DllImport("winscard.dll")]
     public class Terminal//: ILinkTarget
     {
         private Guid _id = new Guid();
@@ -11,10 +11,12 @@ namespace AutomaticStation
 
         public User user { get; set; }
 
+        public Port port { get; set; }
+
 
         public Terminal()
         {
-            this.terminalController = new TerminalController();
+            this.terminalController = new TerminalController(port);
         }
     }
 }

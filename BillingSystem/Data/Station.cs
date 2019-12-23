@@ -10,15 +10,15 @@ namespace BillingSystem.Data
 
         public string Name { get; private set; }
 
-        private ICollection<Port> _portItems { get; set; }
+        //private ICollection<Port> _portItems { get; set; }
 
         private int _port { get; set; }
 
 
-        public Station(string name, ICollection<Port> portItems)
+        public Station(string name)//, ICollection<Port> portItems)
         {
             Name = name;
-            _portItems = portItems;
+            //_portItems = portItems;
         }
 
 

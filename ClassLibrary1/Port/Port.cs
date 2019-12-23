@@ -1,10 +1,13 @@
 ﻿using System;
+using BillingSystem.Data;
 
 namespace AutomaticStation
 {
     public class Port
     {
         public Guid Id = new Guid();
+
+        public Station Station { get; set; }
 
         //private Terminal _activeTerminal;
 
@@ -18,7 +21,7 @@ namespace AutomaticStation
         #endregion
 
 
-        public Port()
+        public Port(Station station)
         {
             this.Status = PortStatus.Free;
             this.portController = new PortController();

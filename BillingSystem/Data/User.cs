@@ -44,9 +44,9 @@ namespace BillingSystem.Data
         #region metods
 
         //абоненст может самостоятельно подключать телефон к порту станции
-        public void connectToPort()
+        public void connectToPort(Station station)
         {
-            Port port = new Port();
+            Port port = new Port(station);
             //CallEventArgs e = new CallEventArgs();
             //port.CallRequested(this, e);
 

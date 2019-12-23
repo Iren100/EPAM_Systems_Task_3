@@ -16,14 +16,15 @@ namespace Tests
 
             #region BS
 
-            Port port = new Port();
+            Station station = new Station("Station1");
+
+            Port port = new Port(station);
 
             User user = new User(port, "Haidzel", "Iryna", "Ivanovna", "Grodno, st. Belye Rosy", "scorpion_nova@tut.by");
 
             TarrifePlan tarrifePlan = TarrifePlan.getInstance("budgetary");
 
-            Station station = new Station("Station1", new List<Port>() { port } );
-
+         
             Agreement agreement = new Agreement("80295861456", user, tarrifePlan, station, "01", DateTime.Now, "First agreement!");
 
             #endregion
@@ -81,7 +82,7 @@ namespace Tests
 
             #region BS
 
-            station = new Station("Station2", new List<Port>() { port });
+            station = new Station("Station2");
 
             agreement = new Agreement("80295861457", user, tarrifePlan, station, "01", DateTime.Now, "Second agreement!");
 
@@ -140,7 +141,7 @@ namespace Tests
 
             #region BS
 
-            port = new Port();
+            //port = new Port();
 
             user = new User(port, "Haidzel", "Lev", "Alekseevich", "Grodno, st. Belye Rosy", "scorpion_nova@mail.ru");
 
@@ -182,7 +183,7 @@ namespace Tests
                 Console.WriteLine("Порт выключен либо занят!");
 
             //запись в коллекцию callHistorytItems инфы о звонке
-            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 3, 30), 15, user);
+            callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 3, 300), 15, user);
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
