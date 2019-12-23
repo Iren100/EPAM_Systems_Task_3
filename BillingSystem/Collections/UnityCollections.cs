@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BillingSystem.Data;
 
-namespace BillingSystem
+namespace BillingSystem.Collections
 {
-    class UnityCollections
+    public static class UnityCollections
     {
-        public ICollection<User> userItems { get; private set; }
+        public static ICollection<User> userItems { get; private set; } = new List<User>();
 
-        public ICollection<Phone> phoneItems { get; private set; }
+        public static ICollection<Phone> phoneItems { get; private set; } = new List<Phone>();
 
-        public ICollection<Agreement> agreementItems { get; private set; }
+        public static ICollection<Agreement> agreementItems { get; private set; } = new List<Agreement>();
+
+        public static ICollection<CallHistory> callHistorytItems { get; private set; } = new List<CallHistory>();
     }
 }
