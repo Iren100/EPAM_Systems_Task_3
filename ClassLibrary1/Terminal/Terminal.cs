@@ -7,16 +7,19 @@ namespace AutomaticStation
     {
         private Guid _id = new Guid();
 
-        public TerminalController terminalController { get; private set; }
+        public TerminalController TerminalController { get; private set; }
 
-        public User user { get; set; }
+        public User User { get; set; }
 
-        public Port port { get; set; }
+        public Port Port { get; set; }
+
+        public Phone Phone { get; set; }
 
 
-        public Terminal()
+        public Terminal(Phone phone)
         {
-            this.terminalController = new TerminalController(port);
+            Phone = phone;
+            TerminalController = new TerminalController(Port);
         }
     }
 }

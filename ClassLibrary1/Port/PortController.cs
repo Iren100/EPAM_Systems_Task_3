@@ -21,7 +21,7 @@ namespace AutomaticStation
                 handler(this, e);
             }
 
-            e.Terminal.terminalController.CallAnswered += OnCallAnswered;
+            e.Terminal.TerminalController.CallAnswered += OnCallAnswered;
         }
 
         private void OnCallAnswered(Object sender, CallEventArgs e)

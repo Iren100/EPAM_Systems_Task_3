@@ -12,7 +12,7 @@ namespace Tests
             // 1 звонок
 
 
-            #region BS
+            #region BS1
 
             Station station = new Station("Station1");
 
@@ -28,33 +28,17 @@ namespace Tests
             #endregion
 
 
-            #region AS
+            #region AS1
 
             //заключение договора
             agreement.Sign(user, tarrifePlan, station);
 
 
-            Terminal terminal = new Terminal();
-
-            ////соединение абонента
-            //port.Connect(terminal);
-            //if (port.Status == PortStatus.Busy)
-            //    Console.WriteLine("Успешное подключение к порту!");
-            //else
-            //    Console.WriteLine("Порт выключен либо занят!");
-
-            ////отсоединение абонента        
-            //port.Disconnect();
-            //if (port.Status == PortStatus.IsFree)
-            //    Console.WriteLine("Успешное отключение от порта!");
-            //else
-            //    Console.WriteLine("Порт не занят или не подключен!");
-
-
             Phone phone = new Phone("1111");
+            Terminal terminal = new Terminal(phone);
 
             //подключение терминала
-            terminal.terminalController.ConnectToPort(terminal,port);
+            terminal.TerminalController.ConnectToPort(terminal,port);
             if (port.Status == PortStatus.Busy)
                 Console.WriteLine("Успешное подключение терминала!");
             else
@@ -65,7 +49,7 @@ namespace Tests
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
-            terminal.terminalController.DisconnectFromPort();
+            terminal.TerminalController.DisconnectFromPort();
 
             print(port.Status);
 
@@ -76,7 +60,7 @@ namespace Tests
             // 2 звонок
 
 
-            #region BS
+            #region BS2
 
             station = new Station("Station2");
 
@@ -85,33 +69,16 @@ namespace Tests
             #endregion
 
 
-            #region AS
+            #region AS2
 
             //заключение договора
             agreement.Sign(user, tarrifePlan, station);
 
-
-            terminal = new Terminal();
-
-            ////соединение абонента
-            //port.Connect(terminal);
-            //if (port.Status == PortStatus.Busy)
-            //    Console.WriteLine("Успешное подключение к порту!");
-            //else
-            //    Console.WriteLine("Порт выключен либо занят!");
-
-            ////отсоединение абонента        
-            //port.Disconnect();
-            //if (port.Status == PortStatus.IsFree)
-            //    Console.WriteLine("Успешное отключение от порта!");
-            //else
-            //    Console.WriteLine("Порт не занят или не подключен!");
-
-
             phone = new Phone("2222");
+            terminal = new Terminal(phone);
 
             //подключение терминала
-            terminal.terminalController.ConnectToPort(terminal, port);
+            terminal.TerminalController.ConnectToPort(terminal, port);
 
             print(port.Status);
 
@@ -120,7 +87,7 @@ namespace Tests
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
-            terminal.terminalController.DisconnectFromPort();
+            terminal.TerminalController.DisconnectFromPort();
 
             print(port.Status);
 
@@ -131,7 +98,7 @@ namespace Tests
             // 3 звонок
 
 
-            #region BS
+            #region BS3
 
             //port = new Port();
 
@@ -142,33 +109,16 @@ namespace Tests
             #endregion
 
 
-            #region AS
+            #region AS3
 
             //заключение договора
             agreement.Sign(user, tarrifePlan, station);
 
-
-            terminal = new Terminal();
-
-            ////соединение абонента
-            //port.Connect(terminal);
-            //if (port.Status == PortStatus.Busy)
-            //    Console.WriteLine("Успешное подключение к порту!");
-            //else
-            //    Console.WriteLine("Порт выключен либо занят!");
-
-            ////отсоединение абонента        
-            //port.Disconnect();
-            //if (port.Status == PortStatus.IsFree)
-            //    Console.WriteLine("Успешное отключение от порта!");
-            //else
-            //    Console.WriteLine("Порт не занят или не подключен!");
-
-
             phone = new Phone("3333");
+            terminal = new Terminal(phone);
 
             //подключение терминала
-            terminal.terminalController.ConnectToPort(terminal, port);
+            terminal.TerminalController.ConnectToPort(terminal, port);
             print(port.Status);
 
             //запись в коллекцию callHistorytItems инфы о звонке
@@ -176,7 +126,7 @@ namespace Tests
             UnityCollections.callHistorytItems.Add(callHistory);
 
             //отключение терминала
-            terminal.terminalController.DisconnectFromPort();
+            terminal.TerminalController.DisconnectFromPort();
            
 
             #endregion
