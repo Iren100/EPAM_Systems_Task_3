@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace Reports
 {
-    public static class Report_Excel
+    public static class ReportUtility
     {
         // создаем путь к файлу шаблона
 

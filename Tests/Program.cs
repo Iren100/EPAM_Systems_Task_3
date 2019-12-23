@@ -134,7 +134,7 @@ namespace Tests
 
             #region report
 
-            Reports.Report_Excel.ReportForExcel(UnityCollections.callHistorytItems);
+            Reports.ReportUtility.ReportForExcel(UnityCollections.callHistorytItems);
 
             #endregion
 
@@ -144,7 +144,7 @@ namespace Tests
 
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
-                Reports.Report_Excel.ShowXlsx();
+                Reports.ReportUtility.ShowXlsx();
             }
 
             Console.ReadLine();
