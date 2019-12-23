@@ -2,7 +2,7 @@
 
 namespace AutomaticStation
 {
-    class TerminalController
+    public class TerminalController
     {
         private Port _activePort;
 
@@ -31,7 +31,7 @@ namespace AutomaticStation
             port.portController.CallRequested += CallRequested;
 
             //сохраняем порт у себя
-            _activePort = port.portController.port;//portId;
+            _activePort = port;//portId;
 
             //меняем статус
             _activePort.Status = PortStatus.Busy;

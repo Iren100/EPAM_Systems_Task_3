@@ -4,9 +4,9 @@ using UnitOfWorkClass.Link;
 namespace AutomaticStation
 {
     //класс для отслеживания измения состояния порта
-    class PortController// : ILinkSource
+    public class PortController// : ILinkSource
     {
-        public PortController(Port port)
+        public PortController()
         {
             //this.port = port;
             CallRequested = OnCallRequested;

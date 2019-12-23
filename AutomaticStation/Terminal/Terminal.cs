@@ -9,9 +9,9 @@ namespace AutomaticStation
         public TerminalController terminalController { get; private set; }
 
 
-        public Terminal(TerminalController terminalController)
+        public Terminal()
         {
-            this.terminalController = terminalController;
+            this.terminalController = new TerminalController();
         }
 
         //delegate void call(); //метод

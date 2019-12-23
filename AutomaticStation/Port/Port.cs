@@ -18,10 +18,10 @@ namespace AutomaticStation
         #endregion
 
 
-        public Port(PortController portController)
+        public Port()
         {
             this.Status = PortStatus.Free;
-            this.portController = portController;
+            this.portController = new PortController();
         }
 
 
