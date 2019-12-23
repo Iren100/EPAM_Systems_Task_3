@@ -10,7 +10,6 @@ namespace AutomaticStation
             
         }
 
-
         //объявление событий Event Hundler
         #region EventHundler
 
@@ -26,8 +25,14 @@ namespace AutomaticStation
             {
                 handler(this, e);
             }
+
+            e.Terminal.terminalController.CallAnswered += OnCallAnswered;
         }
 
+        private void OnCallAnswered(Object sender, CallEventArgs e)
+        {
+            Console.WriteLine("Оповещен порт!");
+        }
 
         #region metods
 

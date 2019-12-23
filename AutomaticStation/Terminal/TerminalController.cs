@@ -28,7 +28,7 @@ namespace AutomaticStation
             //подписка на событие
             port.portController.CallRequested += OnCallRequested;
 
-            CallEventArgs e = new CallEventArgs();
+            CallEventArgs e = new CallEventArgs(port,terminal);
             port.portController.OnCallRequested(e);
 
             //сохраняем порт у себя
@@ -38,7 +38,6 @@ namespace AutomaticStation
             _activePort.Status = PortStatus.Busy;
 
             //оповестить порт
-            CallAnswered += OnCallAnswered;
             OnCallAnswered(e);
         }
 
@@ -69,10 +68,7 @@ namespace AutomaticStation
             }
         }
 
-        private void OnCallAnswered(Object sender, CallEventArgs e)
-        {
-            Console.WriteLine("Оповещен порт!");
-        }
+
 
         #endregion
 
