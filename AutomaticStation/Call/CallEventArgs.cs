@@ -2,12 +2,17 @@
 
 namespace AutomaticStation
 {
+    //некая информация о событии
     public class CallEventArgs : EventArgs
     {
-        //метод
-        public CallEventArgs()
-        {
-            //а-ля звонок
-        }
+        //public Port Port { get; }
+
+        //public Terminal Terminal { get; }
+
+        //public CallEventArgs(Port port, Terminal terminal)
+        //{
+        //    Port = port;
+        //    Terminal = terminal;
+        //}
     }
 }

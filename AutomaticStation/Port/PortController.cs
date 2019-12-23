@@ -1,5 +1,4 @@
 ﻿using System;
-using UnitOfWorkClass.Link;
 
 namespace AutomaticStation
 {
@@ -8,16 +7,9 @@ namespace AutomaticStation
     {
         public PortController()
         {
-            //this.port = port;
-            CallRequested = OnCallRequested;
+            
         }
 
-        //public object GetState()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public Port port { get; private set; }
 
         //объявление событий Event Hundler
         #region EventHundler
@@ -25,18 +17,20 @@ namespace AutomaticStation
         //говорит терминалу, что на него звонят
         public event EventHandler<CallEventArgs> CallRequested;
 
-        //получает ответ от терминала
-        public event EventHandler<CallEventArgs> CallAnswered;
-
         #endregion
+
+        public void OnCallRequested(CallEventArgs e)
+        {
+            EventHandler<CallEventArgs> handler = CallRequested;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
 
 
         #region metods
 
-        private void OnCallRequested(Object sender, CallEventArgs e)
-        {
-            //code
-        }
 
         #endregion
     }

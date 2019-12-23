@@ -56,11 +56,5 @@
     <Compile Include="Terminal\Terminal.cs" />
     <Compile Include="Terminal\TerminalController.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UnitOfWorkClass\UnitOfWorkClass.csproj">
-      <Project>{901b6fa4-559b-49bc-9cb7-19345143a4a7}</Project>
-      <Name>UnitOfWorkClass</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

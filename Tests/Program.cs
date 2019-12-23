@@ -48,11 +48,15 @@ namespace Tests
 
 
             //подключение терминала
-            terminal.terminalController.ConnectToPort(port);
+            terminal.terminalController.ConnectToPort(terminal,port);
             if (port.Status == PortStatus.Busy)
                 Console.WriteLine("Успешное подключение терминала!");
             else
                 Console.WriteLine("Порт выключен либо занят!");
+            //CallEventArgs e = new CallEventArgs(port, terminal);
+            //EventHandler<CallEventArgs> handler = port.portController.CallRequested;
+            //handler(this,e);
+
             
             //отключение терминала
             terminal.terminalController.DisconnectFromPort();
