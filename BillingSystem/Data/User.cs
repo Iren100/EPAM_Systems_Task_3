@@ -47,9 +47,6 @@ namespace BillingSystem.Data
         public void connectToPort(Station station)
         {
             Port port = new Port(station);
-            //CallEventArgs e = new CallEventArgs();
-            //port.CallRequested(this, e);
-
             _port = port;
         }        
         

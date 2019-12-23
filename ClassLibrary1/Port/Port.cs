@@ -9,8 +9,6 @@ namespace AutomaticStation
 
         public Station Station { get; set; }
 
-        //private Terminal _activeTerminal;
-
 
         #region properties
 

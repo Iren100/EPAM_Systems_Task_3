@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using AutomaticStation;
 using BillingSystem.Data;
 using BillingSystem.Collections;
-using Reports;
 
 namespace Tests
 {
@@ -68,10 +66,8 @@ namespace Tests
 
             //отключение терминала
             terminal.terminalController.DisconnectFromPort();
-            if (port.Status == PortStatus.Free)
-                Console.WriteLine("Успешное отключение терминала!");
-            else
-                Console.WriteLine("Порт не занят или не подключен!");
+
+            print(port.Status);
 
             #endregion
 
@@ -116,10 +112,8 @@ namespace Tests
 
             //подключение терминала
             terminal.terminalController.ConnectToPort(terminal, port);
-            if (port.Status == PortStatus.Busy)
-                Console.WriteLine("Успешное подключение терминала!");
-            else
-                Console.WriteLine("Порт выключен либо занят!");
+
+            print(port.Status);
 
             //запись в коллекцию callHistorytItems инфы о звонке
             callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 2, 20), 10, user);
@@ -127,10 +121,8 @@ namespace Tests
 
             //отключение терминала
             terminal.terminalController.DisconnectFromPort();
-            if (port.Status == PortStatus.Free)
-                Console.WriteLine("Успешное отключение терминала!");
-            else
-                Console.WriteLine("Порт не занят или не подключен!");
+
+            print(port.Status);
 
             #endregion
 
@@ -177,10 +169,7 @@ namespace Tests
 
             //подключение терминала
             terminal.terminalController.ConnectToPort(terminal, port);
-            if (port.Status == PortStatus.Busy)
-                Console.WriteLine("Успешное подключение терминала!");
-            else
-                Console.WriteLine("Порт выключен либо занят!");
+            print(port.Status);
 
             //запись в коллекцию callHistorytItems инфы о звонке
             callHistory = new CallHistory(DateTime.Now, new Phone(agreement.PhoneNumber), phone, new TimeSpan(0, 3, 300), 15, user);
@@ -188,10 +177,7 @@ namespace Tests
 
             //отключение терминала
             terminal.terminalController.DisconnectFromPort();
-            if (port.Status == PortStatus.Free)
-                Console.WriteLine("Успешное отключение терминала!");
-            else
-                Console.WriteLine("Порт не занят или не подключен!");
+           
 
             #endregion
 
@@ -205,6 +191,25 @@ namespace Tests
             //
 
             Console.ReadLine();
+        }
+
+        private static void print(PortStatus portStatus)
+        {
+            switch (portStatus)
+                {
+                case PortStatus.Busy:
+                    Console.WriteLine("Успешное подключение терминала!");
+                    break;
+                case PortStatus.Free:
+                    Console.WriteLine("Успешное отключение терминала!");
+                    break;
+                case (PortStatus.Free|PortStatus.TurnOff):
+                    Console.WriteLine("Порт не занят или не подключен!");
+                    break;
+                default:
+                    Console.WriteLine("Порт выключен либо занят!");
+                    break;
+            }
         }
     }
 }

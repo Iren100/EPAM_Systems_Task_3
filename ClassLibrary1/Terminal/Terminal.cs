@@ -3,7 +3,7 @@ using BillingSystem.Data;
 
 namespace AutomaticStation
 {
-    public class Terminal//: ILinkTarget
+    public class Terminal
     {
         private Guid _id = new Guid();
 

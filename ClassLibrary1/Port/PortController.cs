@@ -5,11 +5,6 @@ namespace AutomaticStation
     //класс для отслеживания измения состояния порта
     public class PortController// : ILinkSource
     {
-        public PortController()
-        {
-            
-        }
-
         //объявление событий Event Hundler
         #region EventHundler
 
