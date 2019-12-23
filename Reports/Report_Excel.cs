@@ -7,11 +7,15 @@ using BillingSystem.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
 
+using System.Diagnostics;
+
 namespace Reports
 {
     public static class Report_Excel
     {
         // создаем путь к файлу шаблона
+
+        private static String _file;
 
         public static void ReportForExcel(ICollection<CallHistory> collection)
         {
@@ -33,6 +37,14 @@ namespace Reports
             result.Save(docPath2);
 
             Console.WriteLine("Файл выгружен в " + docPath2);
+
+            _file = docPath2;
+        }
+
+        public static void ShowXlsx()
+        {
+            ShellExecute(_file);
+
         }
 
        private static string AssemblyDirectory
@@ -76,6 +88,32 @@ namespace Reports
                 dataTable.Rows.Add(values);
             }
             return dataTable;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName">Название файла</param>
+        public static void ShellExecute(string fileName)
+        {
+            try
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = fileName,
+                    Verb = "Open"
+                };
+
+                Process.Start(psi);
+            }
+            catch (Win32Exception ex)
+            {
+                ex.Data["FileName"] = fileName;
+                ex.Data["ErrorCode"] = ex.ErrorCode;
+                ex.Data["NativeErrorCode"] = ex.NativeErrorCode;
+
+                throw;
+            }
         }
     }
 }

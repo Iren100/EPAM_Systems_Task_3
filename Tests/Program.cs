@@ -190,6 +190,13 @@ namespace Tests
 
             //
 
+            Console.WriteLine("Открыть отчет xlsx? Y");
+
+            if (Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                Reports.Report_Excel.ShowXlsx();
+            }
+
             Console.ReadLine();
         }
 
